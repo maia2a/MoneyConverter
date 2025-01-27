@@ -1,0 +1,14 @@
+/home/maia2a/projetos/MoneyConverter/bin/Debug/net8.0/MoneyConverter
+/home/maia2a/projetos/MoneyConverter/bin/Debug/net8.0/MoneyConverter.deps.json
+/home/maia2a/projetos/MoneyConverter/bin/Debug/net8.0/MoneyConverter.runtimeconfig.json
+/home/maia2a/projetos/MoneyConverter/bin/Debug/net8.0/MoneyConverter.dll
+/home/maia2a/projetos/MoneyConverter/bin/Debug/net8.0/MoneyConverter.pdb
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.GeneratedMSBuildEditorConfig.editorconfig
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.AssemblyInfoInputs.cache
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.AssemblyInfo.cs
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.csproj.CoreCompileInputs.cache
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.dll
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/refint/MoneyConverter.dll
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.pdb
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.genruntimeconfig.cache
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/ref/MoneyConverter.dll
