@@ -15,57 +15,103 @@ namespace MoneyConverter
 
       while (true)
       {
-        Console.WriteLine("\nEscolha uma opção:");
-        Console.WriteLine("1 - Converter USD para BRL");
-        Console.WriteLine("2 - Converter EUR para BRL");
-        Console.WriteLine("3 - Converter BRL para USD");
-        Console.WriteLine("4 - Converter BRL para EUR");
-        Console.WriteLine("5 - Sair");
+        ExibirMenu();
 
-        int opcao = Convert.ToInt32(Console.ReadLine());
-
-        if (opcao == 5)
+        string opcao = Console.ReadLine();
+        if (opcao == "4")
         {
           Console.WriteLine("Obrigado por usar o MoneyConverter!");
           break;
         }
 
-        Console.Write("Digite o valor a ser convertido: ");
-        decimal valor;
-        if (!decimal.TryParse(Console.ReadLine(), out valor))
+        if (!ValidarOpcao(opcao))
         {
-          Console.WriteLine("Valor inválido. Tente novamente.");
+          Console.WriteLine("Opção inválida. Por favor, escolha uma opção válida.");
           continue;
         }
 
-        decimal resultado = 0;
-
-        switch (opcao)
+        decimal valor = LerValor();
+        if (valor == -1m)
         {
-          case 1:
-            resultado = valor * taxaUSDparaBRL;
-            Console.WriteLine("O valor convertido para BRL é: " + resultado);
-            break;
-          case 2:
-            resultado = valor * taxaEURparaBRL;
-            Console.WriteLine("O valor convertido para BRL é: " + resultado);
-            break;
-          case 3:
-            resultado = valor * taxaBRLparaUSD;
-            Console.WriteLine("O valor convertido para USD é: " + resultado);
-            break;
-          case 4:
-            resultado = valor * taxaBRLparaEUR;
-            Console.WriteLine("O valor convertido para EUR é: " + resultado);
-            break;
-          default:
-            Console.WriteLine("Opção inválida. Tente novamente.");
-            break;
+          continue;
+        }
+
+        decimal valorConvertido = RealizarConversao(opcao, valor, taxaUSDparaBRL, taxaEURparaBRL, taxaBRLparaUSD, taxaBRLparaEUR);
+
+        ExibirResultado(opcao, valor, valorConvertido);
+      }
+
+      static void ExibirMenu()
+      {
+        Console.WriteLine("\nEscolha uma opção:");
+        Console.WriteLine("1 - Converter USD para BRL");
+        Console.WriteLine("2 - Converter EUR para BRL");
+        Console.WriteLine("3 - Converter BRL para USD");
+        Console.WriteLine("4 - Sair");
+      }
+
+      static bool ValidarOpcao(string opcao)
+      {
+        return opcao == "1" || opcao == "2" || opcao == "3" || opcao == "4";
+      }
+
+      static decimal LerValor()
+      {
+        Console.WriteLine("Digite o valor a ser convertido:");
+        if (decimal.TryParse(Console.ReadLine(), out decimal valor) && valor > 0)
+        {
+          return valor;
+        }
+        else
+        {
+          Console.WriteLine("Valor inválido. Por favor, digite um número maior que zero.");
+          return -1m;
         }
       }
 
+      static decimal RealizarConversao(string opcao, decimal valor, decimal taxaUSDparaBRL, decimal taxaEURparaBRL, decimal taxaBRLparaUSD, decimal taxaBRLparaEUR)
+      {
+        switch (opcao)
+        {
+          case "1":
+            return valor * taxaUSDparaBRL;
+          case "2":
+            return valor * taxaEURparaBRL;
+          case "3":
+            return valor * taxaBRLparaUSD;
+          default:
+            return 0m;
+        }
+      }
 
+      static void ExibirResultado(string opcao, decimal valor, decimal resultado)
+      {
+        string moedaOrigem = "";
+        string moedaDestino = "";
 
+        switch (opcao)
+        {
+          case "1":
+            moedaOrigem = "USD";
+            moedaDestino = "BRL";
+            break;
+          case "2":
+            moedaOrigem = "EUR";
+            moedaDestino = "BRL";
+            break;
+          case "3":
+            moedaOrigem = "BRL";
+            moedaDestino = "USD";
+            break;
+        }
+
+        Console.WriteLine($"O valor {valor} {moedaOrigem} equivale a {resultado} {moedaDestino}");
+      }
     }
+
   }
 }
+
+
+
+

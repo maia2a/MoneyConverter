@@ -12,3 +12,4 @@
 /home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.pdb
 /home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.genruntimeconfig.cache
 /home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/ref/MoneyConverter.dll
+/home/maia2a/projetos/MoneyConverter/obj/Debug/net8.0/MoneyConverter.sourcelink.json
